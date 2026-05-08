@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1rem;
+  background: #eef2f8;
+}
+
+.editor-side,
+.preview-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #e5eaf1;
+}
+
+.panel-header h2 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.panel-header span {
+  display: block;
+  margin-top: 0.25rem;
+  color: #667085;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.editor-actions button {
+  min-width: 76px;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  color: #1f2937;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.editor-actions button:hover:not(:disabled),
+.editor-actions button:focus-visible:not(:disabled) {
+  border-color: #2563eb;
+  color: #1d4ed8;
+  outline: none;
+}
+
+.editor-actions button:disabled {
+  color: #98a2b3;
+  cursor: not-allowed;
+}
+
+textarea,
+.preview-box {
+  flex: 1;
+  min-height: 0;
+  padding: 1rem;
+  border: 0;
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+textarea {
+  resize: none;
+  color: #111827;
+  outline: none;
+}
+
+textarea:focus {
+  box-shadow: inset 0 0 0 2px #2563eb;
+}
+
+.preview-box {
+  color: #1f2937;
+  background-color: #fbfcfe;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.preview-box > :first-child {
+  margin-top: 0;
+}
+
+.preview-box pre {
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #111827;
+  color: #f9fafb;
+}
+
+.preview-box code {
+  font-family: monospace;
+}
+
+.preview-box blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 4px solid #2563eb;
+  color: #4b5563;
+}
+
+.preview-box img,
+.preview-box table {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0.75rem;
+  }
+
+  textarea,
+  .preview-box {
+    min-height: 320px;
+  }
+
+  .panel-header {
+    align-items: flex-start;
+  }
+}
